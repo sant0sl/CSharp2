@@ -17,5 +17,7 @@ namespace Aula_MVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        //Se o site cair, aqui pode ser feito um método de aviso, email, whats, etc
     }
 }
