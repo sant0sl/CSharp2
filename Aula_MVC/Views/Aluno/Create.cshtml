@@ -1,0 +1,33 @@
+﻿
+@model Aula_MVC.Models.Aluno
+@{
+    ViewBag.Title = "Create";
+}
+
+<form action="Create" method="post">
+    <h2>Novo Aluno</h2>
+    <table>
+        <tr>
+            <td>ID:</td>
+            <td><input type="text" id="txtID" name="txtID" value="@ViewBag._Id" /></td>
+        </tr>
+        <tr>
+            <td>Nome:</td>
+            <td><input type="text" id="txtNome" name="txtNome" value="@ViewBag._Nome" /></td>
+        </tr>
+        <tr>
+            <td>Idade:</td>
+            <td><input type="text" id="txtIdade" name="txtIdade" value="@ViewBag._Idade" /></td>
+        </tr>
+        <tr>
+            <td><input type="hidden" id="lista_alunos" name="lista_alunos" value="@ViewData["lista_alunos"]" /></td>
+            <td><input type="submit" id="btnSalvar" name="btnSalvar" value="Salvar" /></td>
+        </tr>
+        <tr>
+            <td colspan="6">@ViewBag.Erro</td>
+        </tr>
+        <tr>
+            <td colspan="6">@ViewData["lista_alunos"]</td>
+        </tr>
+    </table>
+</form>
