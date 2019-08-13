@@ -123,6 +123,7 @@
     <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Controllers\FacearController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ParImparController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -174,6 +175,7 @@
     <Content Include="Views\Pessoa\Index.cshtml" />
     <Content Include="Views\Pessoa\Details.cshtml" />
     <Content Include="Views\Aluno\Create.cshtml" />
+    <Content Include="Views\ParImpar\Sum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

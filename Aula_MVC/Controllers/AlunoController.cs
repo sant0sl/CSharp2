@@ -29,7 +29,7 @@ namespace Aula_MVC.Controllers
         {
             if (txtIdade < 18)
             {
-                ViewBag.Erro = "A idade não pode ser menor que 18 anos";
+                ViewBag._Erro = "A idade não pode ser menor que 18 anos";
                 ViewBag._Id = txtID;
                 ViewBag._Nome = txtNome;
                 ViewBag._Idade = txtIdade;
@@ -40,7 +40,7 @@ namespace Aula_MVC.Controllers
                 a1.idPessoa = txtID;
                 a1.nome = txtNome;
                 a1.idade = txtIdade;
-                lista_alunos += "<br>" + a1.idPessoa + " " + a1.nome + " " + a1.idade;
+                lista_alunos += "  /  " + a1.idPessoa + " - " + a1.nome + " - " + a1.idade;
                 ViewData["lista_alunos"] = lista_alunos;
                 ViewBag._Id = "";
                 ViewBag._Nome = "";

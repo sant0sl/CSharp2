@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Sum";
+}
+
+<form action="Sum" method="post">
+
+    <h2>Par ou Impar</h2>
+    <table>
+        <tr>
+            <td>Número:</td>
+            <td><input type="text" id="txtNumeroNovo" name="txtNumeroNovo" value="@ViewBag._NumeroNovo" /></td>
+        </tr>
+        <tr>
+            <td><input type="hidden" id="txtNumeroAntigo" name="txtNumeroAntigo" value="@ViewBag._NumeroAntigo" /></td>
+            <td><input type="submit" id="btnSomar" name="btnSomar" value="Somar" /></td>
+        </tr>
+        <tr>
+            <td colspan="6" style="color: @ViewBag._Cor">@ViewBag._ParOuImpar</td>
+        </tr>
+    </table>
+
+</form>
