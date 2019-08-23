@@ -10,7 +10,7 @@ namespace Aula_MVC.Controllers
     public class AlunoController : Controller
     {
         //Dados da view para controller - existem 4 formas
-        
+
 
         // GET: Aluno
         public ActionResult Index()
@@ -50,7 +50,73 @@ namespace Aula_MVC.Controllers
             return View();
         }
 
-        //2º Modo
+
+
+        //2º Modo - FORM COLLECTION (Puxa o html da view no parâmetro, e pega as informações que quiser e faz o que quiser)
+        public ActionResult newAluno()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult newAluno(FormCollection form)
+        {
+            Pessoa p1 = new Pessoa();
+            p1.nome = form["txtNome"];
+            p1.idade = Convert.ToInt32(form["txtIdade"]);
+            return View();
+        }
+
+
+
+        //3º Modo - View tipada, define na view um model, inputs com ID E NAME do mesmo nome que as variáveis da classe, e pega a classe montada
+        public ActionResult novoAluno()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult novoAluno(Aluno aluno, FormCollection form)
+        {
+
+            if (!aluno.idPessoa.HasValue)
+            {
+                ModelState.AddModelError("", "O campo idPessoa é obrigatório!");
+            }
+            if (string.IsNullOrEmpty(aluno.nome))
+            {
+                ModelState.AddModelError("","O campo nome não pode ser vazio.");
+            }
+            if (!aluno.idade.HasValue)
+            {
+                ModelState.AddModelError("", "O campo idade é obrigatório!");
+            }
+            if (!aluno.peso.HasValue)
+            {
+                ModelState.AddModelError("", "O peso é um campo obrigatório.");
+            }
+            else
+            {
+                if (aluno.peso < 0 || aluno.peso > 300)
+                {
+                    ModelState.AddModelError("", "O peso deve ser superior a 0 e inferior a 300");
+                }
+            }
+            if (string.IsNullOrEmpty(aluno.sexo))
+            {
+                ModelState.AddModelError("", "O campo sexo não pode ser nulo!");
+            }
+            else
+            {
+                if (!aluno.sexo.Equals("M") || !aluno.sexo.Equals("F"))
+                {
+                    ModelState.AddModelError("", "O campo sexo deve ser M ou F!");
+                }
+            }
+            return View();
+        }
+
 
 
     }
