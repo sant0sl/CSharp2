@@ -109,7 +109,7 @@ namespace Aula_MVC.Controllers
             }
             else
             {
-                if (!aluno.sexo.Equals("M") || !aluno.sexo.Equals("F"))
+                if (aluno.sexo != "M" && aluno.sexo != "F")
                 {
                     ModelState.AddModelError("", "O campo sexo deve ser M ou F!");
                 }

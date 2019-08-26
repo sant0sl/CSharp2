@@ -25,21 +25,32 @@
     @Html.LabelFor(x => x.idPessoa, new { @class = "cssTeste" })
     @Html.TextBoxFor(x => x.idPessoa)
     <br />
+    @Html.ValidationMessageFor(x => x.idPessoa)
+    <br />
+    <br />
     @Html.LabelFor(x => x.nome)
     @Html.TextBoxFor(x => x.nome)
     <br />
+    @Html.ValidationMessageFor(x => x.nome)
+    <br />
+    <br />
     @Html.LabelFor(x => x.idade)
     @Html.TextBoxFor(x => x.idade)
+    <br />
+    @Html.ValidationMessageFor(x => x.idade)
+    <br />
     <br />
     @Html.LabelFor(x => x.peso)
     @Html.TextBoxFor(x => x.peso)
     <br />
     @Html.ValidationMessageFor(x => x.peso)
     <br />
+    <br />
     @Html.LabelFor(x => x.sexo)
     @Html.TextBoxFor(x => x.sexo)
     <br />
     @Html.ValidationMessageFor(x => x.sexo)
+    <br />
     <br />
     <input type="submit" value="Salvar" />
 
