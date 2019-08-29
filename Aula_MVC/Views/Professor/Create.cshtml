@@ -1,0 +1,59 @@
+﻿@model Aula_MVC.Models.Professor
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<form method="post">
+
+    @Html.LabelFor(x => x.Sexo)
+    <br />
+    @Html.TextBoxFor(x => x.Sexo)
+    <br />
+    @Html.ValidationMessageFor(x => x.Sexo)
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Nome)
+    <br />
+    @Html.TextBoxFor(x => x.Nome)
+    <br />
+    @Html.ValidationMessageFor(x => x.Nome)
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Sobrenome)
+    <br />
+    @Html.TextBoxFor(x => x.Sobrenome)
+    <br />
+    @Html.ValidationMessageFor(x => x.Sobrenome)
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Idade)
+    <br />
+    @Html.TextBoxFor(x => x.Idade)
+    <br />
+    @Html.ValidationMessageFor(x => x.Idade)
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Senha)
+    <br />
+    @Html.PasswordFor(x => x.Senha)
+    <br />
+    @Html.ValidationMessageFor(x => x.Senha)
+    <br />
+    <br />
+    @Html.LabelFor(x => x.ConfirmaSenha)
+    <br />
+    @Html.PasswordFor(x => x.ConfirmaSenha)
+    <br />
+    @Html.ValidationMessageFor(x => x.ConfirmaSenha)
+    <br />
+    <br />
+    <input type="submit" value="Salvar" />
+
+</form>
+
+@*comando para verificação da validação em tempo real*@
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
