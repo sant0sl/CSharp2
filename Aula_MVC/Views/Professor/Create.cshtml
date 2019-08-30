@@ -7,6 +7,20 @@
 
 <form method="post">
 
+    @Html.LabelFor(x => x.Cpf)
+    <br />
+    @Html.TextBoxFor(x => x.Cpf)
+    <br />
+    @Html.ValidationMessageFor(x => x.Cpf)
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Email)
+    <br />
+    @Html.TextBoxFor(x => x.Email)
+    <br />
+    @Html.ValidationMessageFor(x => x.Email)
+    <br />
+    <br />
     @Html.LabelFor(x => x.Sexo)
     <br />
     @Html.TextBoxFor(x => x.Sexo)

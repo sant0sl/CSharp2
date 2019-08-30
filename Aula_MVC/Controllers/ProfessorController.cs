@@ -9,13 +9,14 @@ namespace Aula_MVC.Controllers
 {
     public class ProfessorController : Controller
     {
+
         // GET: Professor
         public ActionResult Index()
         {
             return View();
         }
 
-        //DataNotation - Validação de campos mais simples
+        //DataAnnotation - Validação de campos mais simples
         public ActionResult Create()
         {
             return View();
@@ -30,8 +31,18 @@ namespace Aula_MVC.Controllers
             else
             {
                 //Salva no banco...
+                List<string> listaCPF = new List<string>();
+                if (Session["listaCPFSession"] != null)
+                {
+                    listaCPF = (List<string>)Session["listaCPFSession"];
+                }
+                
+                listaCPF.Add(prof.Cpf);
+
+                Session["listaCPFSession"] = listaCPF;
+
+                return View();
             }
-            return View(prof);
         }
 
         //Validação do sexo
@@ -45,6 +56,35 @@ namespace Aula_MVC.Controllers
             {
                 return Json(false, JsonRequestBehavior.AllowGet);
             }
+        }
+
+
+        //Validação CPF e email
+        public ActionResult validacaoCPF(string cpf/*, string email*/)
+        {
+            //if (!email.Contains("@"))
+            //{
+            //    return Json(false, JsonRequestBehavior.AllowGet);
+            //}
+            if (Session["listaCPFSession"] != null)
+            {
+                List<string> listaCPF;
+                //no caso de banco, dá o select aqui pra carregar a lista, e verifica...
+                listaCPF = (List<string>)Session["listaCPFSession"];
+                if (listaCPF.Contains(cpf))
+                {
+                    return Json(false, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(true, JsonRequestBehavior.AllowGet);
+                }
+            }
+            else
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            
         }
 
     }
