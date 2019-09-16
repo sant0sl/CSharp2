@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Logado";
+}
+
+<h2>Ola, Administrador</h2>
+
+<form>
+
+    @Html.ActionLink("Nova Noticia", "Create")
+    <br />
+    @Html.ActionLink("Sair", "Login", "Principal")
+
+    <br />
+    <br />
+    <br />
+
+    <table width="100%">
+
+        <tr>
+            <td>ID</td>
+            <td>TIPO</td>
+            <td>TITULO</td>
+            <td>DESCRICAO</td>
+            <td>-</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.idNoticia</td>
+                @if (item.idCategoria == 1)
+                {
+                    <td>Esporte</td>
+                }
+                else if (item.idCategoria == 2)
+                {
+                    <td>Jornalismo</td>
+                }
+                <td>@item.Titulo</td>
+                <td>@item.Descricao</td>
+                <td>@Html.ActionLink("Alterar", "Update", new { id = item.idNoticia })</td>
+                <td>@Html.ActionLink("Deletar", "Delete", new { id = item.idNoticia })</td>
+            </tr>
+        }
+    </table>
+
+</form>

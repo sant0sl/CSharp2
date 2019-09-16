@@ -1,0 +1,14 @@
+﻿@model Atividade1.Models.Usuario
+@{
+    ViewBag.Title = "LoginAdmin";
+}
+
+<h2>Ola, Administrador</h2>
+
+<form method="post">
+
+    @Html.LabelFor(x => x.login)
+    <br />
+    @Html.LabelFor(x => x.senha)
+
+</form>

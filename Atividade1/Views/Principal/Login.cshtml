@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<form method="post">
+
+    <h2>Acesso do Administrador</h2>
+    <br />
+    @Html.ValidationSummary(true)
+    <br />
+    Login
+    <input type="text" id="txtLogin" name="txtLogin" />
+    <br />
+    Senha
+    <input type="text" id="txtSenha" name="txtSenha" />
+    <br />
+    <input type="submit" value="Entrar" />
+
+</form>

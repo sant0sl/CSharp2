@@ -1,0 +1,20 @@
+﻿@model Atividade1.Models.Noticia
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Alterar Noticia</h2>
+
+<form method="post">
+
+    ID: @Html.TextBoxFor(x => x.idNoticia, new { style = "readonly:off" })
+    <br />
+    ID da Categoria: @Html.TextBoxFor(x => x.idCategoria)
+    <br />
+    Titulo: @Html.TextBoxFor(x => x.Titulo)
+    <br />
+    Descricao: @Html.TextBoxFor(x => x.Descricao)
+    <br />
+    <input type="submit" value="Alterar" />
+
+</form>

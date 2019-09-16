@@ -1,0 +1,49 @@
+﻿@model Atividade1.Models.Noticia
+@{
+    ViewBag.Title = "CadastrarNoticia";
+}
+
+<h2>Cadastrar Noticia</h2>
+
+<form method="post">
+
+    @Html.LabelFor(x => x.idNoticia)
+    @Html.TextBoxFor(x => x.idNoticia)
+    <br />
+    @Html.ValidationMessageFor(x => x.idNoticia)
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Titulo)
+    @Html.TextBoxFor(x => x.Titulo)
+    <br />
+    @Html.ValidationMessageFor(x => x.Titulo)
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Descricao)
+    @Html.TextAreaFor(x => x.Descricao)
+    <br />
+    @Html.ValidationMessageFor(x => x.Descricao)
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Autor)
+    @Html.TextBoxFor(x => x.Autor)
+    <br />
+    @Html.ValidationMessageFor(x => x.Autor)
+    <br />
+    <br />
+    <input type="submit" value="Salvar" />
+
+</form>
+<br />
+<br />
+<table>
+    <tr>
+        <td>@ViewData["Noticias"]</td>
+        <br />
+        <td>@Html.ActionLink("Excluir Noticias", "Excluir")</td>
+    </tr>
+</table>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

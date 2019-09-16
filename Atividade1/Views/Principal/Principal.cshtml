@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Atividade1.Models.Noticia>
+@{
+    ViewBag.Title = "Principal";
+}
+
+<h2>Listagem de Noticias</h2>
+<br />
+<table width="100%">
+
+    <tr>
+        <td>ID</td>
+        <td>TIPO</td>
+        <td>TITULO</td>
+        <td>DESCRICAO</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.idNoticia</td>
+        @if (item.idCategoria == 1)
+        {
+            <td>Esporte</td>
+        }
+        else if (item.idCategoria == 2)
+        {
+            <td>Jornalismo</td>
+        }
+        <td>@item.Titulo</td>
+        <td>@item.Descricao</td>
+    </tr>
+    }
+</table>

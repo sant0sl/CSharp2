@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <style>
+        .ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 150px;
+        }
+
+        .ul li {
+            position: relative;
+        }
+
+        .li ul {
+            position: absolute;
+            left: 149px;
+            top: 0;
+            display: none;
+        }
+
+        .ul li a {
+            display: block;
+            text-decoration: none;
+            color: #E2144A;
+            background: #fff;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+    <div>
+        <ul id="nav">
+            <li>@Html.ActionLink("Home", "Index")</li>
+            <li>@Html.ActionLink("Bone", "Bone")</li>
+            <li>@Html.ActionLink("Meia", "Meia")</a></li>
+            <li>@Html.ActionLink("Sapato", "Sapato")</a></li>
+        </ul>
+    </div>
+</body>
+</html>
